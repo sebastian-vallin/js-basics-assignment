@@ -13,21 +13,19 @@ npm install
 ## Available scripts
 
 ### Build and start the project in production mode
+
 ```sh
 npm run start
 ```
 
-### Starts the project in watch mode
-```sh
-npm run dev
-```
+### Build the project to the "out" folder in watch mode
 
-### Build the project in watch mode
 ```sh
 npm run watch
 ```
 
 ### Builds the project to the "out" folder
+
 ```sh
 npm run build
 ```
