@@ -1,14 +1,15 @@
 // *** Ignore the following lines ***
 import chalk from "chalk";
 import prompt from "prompt-sync";
-const readLine = prompt();
-const readKey = prompt({ sigint: true });
 // *** Ignore the above lines ***
 
+// Use the following prompt to read input from the user:
+const readLine = prompt();
+const readKey = prompt({ sigint: true });
+
 function runExerciseOne() {
-  console.log(
-    "Write your own code for this method. Press any key to exit method."
-  );
+  console.log("Write your own code for this method.");
+  readKey("Press any key to exit function...");
 }
 
 function runExerciseTwo() {}
@@ -87,6 +88,6 @@ while (keepAlive) {
       console.log(chalk.green("Exiting..."));
     }
   } catch (err) {
-    console.log(err);
+    console.log(chalk.red(err));
   }
 }
