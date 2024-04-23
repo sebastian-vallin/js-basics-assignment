@@ -197,6 +197,132 @@ function runExerciseTen() {
   console.log("Negative numbers: ", negativeNumbers2);
 }
 
+function runExerciseEleven() {
+  const input = parseFloat(readLine("Enter your body temperature (C°): "));
+  console.log(input > 37.5 ? "You have a fever" : "You do not have a fever");
+}
+
+function runExerciseTwelve() {
+  const currentYear = parseInt(readLine("Enter the current year: "));
+  const actualCurrentYear = new Date().getFullYear();
+  console.log(
+    currentYear === actualCurrentYear
+      ? `You entered the correct year! (current year is ${actualCurrentYear})`
+      : `You entered the wrong year! (current year is ${actualCurrentYear})`
+  );
+}
+
+function runExerciseThirteen() {
+  const allowedOperators = ["+", "-", "*", "/"];
+
+  const num1 = parseFloat(readLine("Enter first number: "));
+
+  let op: string;
+  while (true) {
+    op = readLine("Enter an operator (+, -, *, /): ");
+    if (allowedOperators.includes(op)) break;
+    console.error("Invalid operator");
+  }
+
+  const num2 = parseFloat(readLine("Enter second number: "));
+
+  switch (op) {
+    case "+":
+      console.log(`${num1} + ${num2} = ${num1 + num2}`);
+      break;
+    case "-":
+      console.log(`${num1} - ${num2} = ${num1 - num2}`);
+      break;
+    case "*":
+      console.log(`${num1} * ${num2} = ${num1 * num2}`);
+      break;
+    case "/":
+      console.log(`${num1} / ${num2} = ${num1 / num2}`);
+      break;
+    default:
+      console.error("Invalid operator");
+  }
+}
+
+function runExerciseFourteen() {
+  const allowedGrades = ["A", "B", "C", "D", "E", "F"];
+  let grade: string;
+  while (true) {
+    grade = readLine("Enter your grade (A, B, C, D, E, F): ").toUpperCase();
+    if (allowedGrades.includes(grade)) break;
+    console.error("Invalid grade");
+  }
+
+  switch (grade) {
+    case "A":
+      console.log("Excellent!");
+      break;
+    case "B":
+      console.log("Good job!");
+      break;
+    case "C":
+      console.log("Well done!");
+      break;
+    case "D":
+      console.log("You passed!");
+      break;
+    case "E":
+      console.log("You need to improve!");
+      break;
+    case "F":
+    default:
+      console.error("You failed!");
+  }
+}
+
+function runExerciseFifteen() {
+  let number: number;
+  while (true) {
+    try {
+      number = parseInt(readLine("Enter a number smaller than 100: "));
+      if (number < 100) break;
+      console.error("Number is not smaller than 100");
+    } catch {
+      console.error("Invalid input");
+    }
+  }
+
+  console.log("######## Using a for loop ########");
+  for (let i = 1; i <= number; i++) {
+    console.log(i);
+  }
+  console.log("Descending order");
+  for (let i = number; i >= 1; i--) {
+    console.log(i);
+  }
+
+  console.log("######## Using a while loop ########");
+  let i = 1;
+  while (i <= number) {
+    console.log(i);
+    i++;
+  }
+  i = number;
+  console.log("Descending order");
+  while (i >= 1) {
+    console.log(i);
+    i--;
+  }
+
+  console.log("######## Using a do-while loop ########");
+  i = 1;
+  do {
+    console.log(i);
+    i++;
+  } while (i <= number);
+  i = number;
+  console.log("Descending order");
+  do {
+    console.log(i);
+    i--;
+  } while (i >= 1);
+}
+
 /* ^^^^^^^^^^^^  Add the rest of the exercise functions above this line ^^^^^^^^^^^^ */
 
 let keepAlive = true;
@@ -237,6 +363,21 @@ while (keepAlive) {
         break;
       case 10:
         runExerciseTen();
+        break;
+      case 11:
+        runExerciseEleven();
+        break;
+      case 12:
+        runExerciseTwelve();
+        break;
+      case 13:
+        runExerciseThirteen();
+        break;
+      case 14:
+        runExerciseFourteen();
+        break;
+      case 15:
+        runExerciseFifteen();
         break;
 
       /* ^^^^^^^^^^^^  Add the rest of the exercises above this line ^^^^^^^^^^^^ */
