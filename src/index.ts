@@ -4,12 +4,10 @@ import prompt from "prompt-sync";
 // *** Ignore the above lines ***
 
 // Use the following prompt to read input from the user:
-const readLine = prompt();
-const readKey = prompt({ sigint: true });
+const readLine = prompt({ sigint: true });
 
 function runExerciseOne() {
   console.log("Write your own code for this method.");
-  readKey("Press any key to exit function...");
 }
 
 function runExerciseTwo() {}
@@ -37,7 +35,7 @@ console.clear();
 while (keepAlive) {
   try {
     const assignmentChoice = parseInt(
-      readLine("Enter assignment number (or -1 to exit): ") ?? ""
+      readLine("Enter assignment number (ctrl + C or -1 to exit): ")
     );
     console.log();
     switch (assignmentChoice) {
@@ -82,7 +80,7 @@ while (keepAlive) {
     }
     if (assignmentChoice !== -1) {
       console.log();
-      readKey(chalk.dim("Hit any key to continue..."));
+      readLine(chalk.dim("Press enter to continue..."));
       console.clear();
     } else {
       console.log(chalk.green("Exiting..."));
