@@ -7,6 +7,7 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node ./out/index.js",
+    "_start": "node ./out/index.js",
     "watch": "tsc --watch",
     "build": "tsc"
   },
