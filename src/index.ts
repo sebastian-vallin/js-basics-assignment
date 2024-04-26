@@ -3,7 +3,7 @@ import chalk from "chalk";
 import prompt from "prompt-sync";
 // *** Ignore the above lines ***
 
-// Use the following prompt to read input from the user:
+// Use the following function to read input from the user:
 const readLine = prompt({ sigint: true });
 
 function runExerciseOne() {
